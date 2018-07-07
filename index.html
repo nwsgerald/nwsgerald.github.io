@@ -13,7 +13,14 @@ var places = [ ];
 }
 
 function addOption() {
-  $('.container').find('.options').append('<input type="text" name="eatery" /><br>');
+  $('.container').find('.options').append('
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">@</span>
+  </div>
+  <input type="text" class="form-control" aria-describedby="basic-addon1">
+</div>
+                                          ');
 }
 </script>
 
