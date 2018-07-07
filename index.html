@@ -1,0 +1,30 @@
+<html>
+<script type="text/javascript">
+function choose() { 
+var places = [ ];
+  $('input').each(function () {
+    if($(this).val() != '') {
+        places.push($(this).val());
+      }
+  });
+  $('.choice').text(places[Math.floor(Math.random() * places.length)])
+}
+
+function addOption() {
+  $('.container').find('.options').append('<input type="text" name="eatery" /><br>');
+}
+</script>
+
+<div class="container" align="center">
+  <div class="options" align="center">
+    <input type="text" name="eatery" /><br>
+    <input type="text" name="eatery" /><br>
+  </div>
+  <button onclick=addOption(); style='font-size:24px !important'>Add a place</button>
+  
+  &nbsp;&nbsp;&nbsp;
+  
+  <button onclick=choose(); style="font-size: 24px;">Go</button>
+  <div class="choice" style='font-size:24px !important'></div>
+  </div>
+  </html>
