@@ -9,7 +9,9 @@ var places = [ ];
         places.push($(this).val());
       }
   });
-  $('.choice').text(places[Math.floor(Math.random() * places.length)])
+  if(places.length == 0) return;
+  $('.choice').text(places[Math.floor(Math.random() * places.length)]);
+  $('#choice').removeClass("hidden");
 }
 
 function addOption() {
@@ -17,7 +19,7 @@ function addOption() {
 }
 </script>
   <h1 align="center" class="display-1">Hi, Teacher Joanna</h1>
-<h6 align="center" class="display-6">Add places below and click "Go" to help with this life-ruining insanely tough decision!</h6>
+<h6 align="center" class="display-6">Add places below and click "Go" to help with this life-ruining, insanely tough decision!</h6>
 <div class="container" align="center">
   <div class="options" align="center">
     <div class="input-group mb-3">
@@ -32,7 +34,8 @@ function addOption() {
   &nbsp;&nbsp;&nbsp;
   
   <button onclick=choose(); class="btn-primary btn-lg">Go</button>
-  <div class="choice" style='font-size:24px !important'></div>
+  
+  <div id="choice" class="choice alert alert-success hidden" role="alert"></div>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
