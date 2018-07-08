@@ -10,7 +10,7 @@ var places = [ ];
       }
   });
   if(places.length == 0) return;
-  $('.choice').text(places[Math.floor(Math.random() * places.length)]);
+  $('.choice').text("Abba has spoken, we should go for" + places[Math.floor(Math.random() * places.length)]);
   $('#choice').removeClass("d-none");
 }
 
